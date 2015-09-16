@@ -15,10 +15,10 @@ public class Main {
 	public void sync() throws Exception {
 		ftpClient = new FTPClient();
 		ftpClient.connect(server, port);
-        ftpClient.login(user, password);
-        ftpClient.setFileTransferMode(FTP.BLOCK_TRANSFER_MODE);
-        ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-        System.out.println("Conectado com sucesso!");
+        	ftpClient.login(user, password);
+        	ftpClient.setFileTransferMode(FTP.BLOCK_TRANSFER_MODE);
+        	ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+	        System.out.println("Conectado com sucesso!");
 	}
 	
 	public void listFiles(String directory) throws Exception {
@@ -32,14 +32,14 @@ public class Main {
 	public void uploadFile(String directory, String fileName, InputStream inputStream) throws Exception {
 		ftpClient.changeWorkingDirectory(directory);
 		ftpClient.storeFile(fileName, inputStream);
-        System.out.println("Arquivo enviado!");
+        	System.out.println("Arquivo enviado!");
 	}
 	
 	public void newFile(String directory, String fileName, String text) throws Exception {
 		ftpClient.changeWorkingDirectory(directory);
-        InputStream inputStream = new ByteArrayInputStream(text.getBytes());
-        ftpClient.storeFile(fileName, inputStream);
-        System.out.println("Arquivo criado!");
+        	InputStream inputStream = new ByteArrayInputStream(text.getBytes());
+        	ftpClient.storeFile(fileName, inputStream);
+        	System.out.println("Arquivo criado!");
 	}
 	
 	public void renameFile(String directory, String fileName, String fileNewName) throws Exception {
