@@ -8,9 +8,9 @@ public class Main {
 	
 	private String server = "hostname.com";
 	private int port = 0;
-    private String user = "user";
-    private String password = "password";
-    private FTPClient ftpClient;
+    	private String user = "user";
+    	private String password = "password";
+    	private FTPClient ftpClient;
 	
 	public void sync() throws Exception {
 		ftpClient = new FTPClient();
@@ -51,12 +51,12 @@ public class Main {
 	public void removeFile(String directory, String fileName) throws Exception {
 		ftpClient.changeWorkingDirectory(directory);
 		ftpClient.deleteFile(fileName);
-		System.out.println("Arquivo excluÌdo!");
+		System.out.println("Arquivo exclu√≠do!");
 	}
 	
 	public void closeSync() throws Exception {
 		ftpClient.logout();
-		System.out.println("Conex„o fechada!");
+		System.out.println("Conex√£o fechada!");
 	}
 	
 
