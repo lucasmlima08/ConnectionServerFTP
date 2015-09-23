@@ -18,7 +18,7 @@ public class Main {
         	ftpClient.login(user, password);
         	ftpClient.setFileTransferMode(FTP.BLOCK_TRANSFER_MODE);
         	ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-	        System.out.println("Conectado com sucesso!");
+	        System.out.println("Open Connection!");
 	}
 	
 	public void listFiles(String directory) throws Exception {
@@ -32,31 +32,31 @@ public class Main {
 	public void uploadFile(String directory, String fileName, InputStream inputStream) throws Exception {
 		ftpClient.changeWorkingDirectory(directory);
 		ftpClient.storeFile(fileName, inputStream);
-        	System.out.println("Arquivo enviado!");
+        	System.out.println("Uploaded File!");
 	}
 	
 	public void newFile(String directory, String fileName, String text) throws Exception {
 		ftpClient.changeWorkingDirectory(directory);
         	InputStream inputStream = new ByteArrayInputStream(text.getBytes());
         	ftpClient.storeFile(fileName, inputStream);
-        	System.out.println("Arquivo criado!");
+        	System.out.println("New Created File!");
 	}
 	
 	public void renameFile(String directory, String fileName, String fileNewName) throws Exception {
 		ftpClient.changeWorkingDirectory(directory);
 		ftpClient.rename(fileName, fileNewName);
-		System.out.println("Arquivo renomeado!");
+		System.out.println("Renamed File!");
 	}
 	
 	public void removeFile(String directory, String fileName) throws Exception {
 		ftpClient.changeWorkingDirectory(directory);
 		ftpClient.deleteFile(fileName);
-		System.out.println("Arquivo excluído!");
+		System.out.println("Deleted File!");
 	}
 	
 	public void closeSync() throws Exception {
 		ftpClient.logout();
-		System.out.println("Conexão fechada!");
+		System.out.println("Closed Connection!");
 	}
 	
 
